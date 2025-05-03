@@ -7,7 +7,7 @@ import Timer from './components/common/Timer';
 import VoteModal from './components/vote/VoteModal';
 import { UserProvider, useUser } from './hooks/UserContext';
 
-function AppContent() {
+function App() {
   useEffect(() => {
     sdk.actions.ready();
   }, []);
@@ -161,10 +161,4 @@ function AppContent() {
   );
 }
 
-function App() {
-  return (
-    <UserProvider>
-      <AppContent />
-    </UserProvider>
-  );
-}
+export default App;
