@@ -5,7 +5,7 @@ import DataPointCard from './components/vote/DataPointCard';
 import VoteTabs from './components/vote/VoteTabs';
 import Timer from './components/common/Timer';
 import VoteModal from './components/vote/VoteModal';
-import { UserProvider, useUser } from './hooks/UserContext';
+import { useUser } from './hooks/UserContext';
 
 function App() {
   useEffect(() => {
