@@ -1,6 +1,6 @@
 import { sdk } from "@farcaster/frame-sdk";
 import { useEffect, useState } from "react";
-import { useAccount, useConnect, useSignMessage } from "wagmi";
+// import { useAccount, useConnect, useSignMessage } from "wagmi";
 import DataPointCard from './components/vote/DataPointCard';
 import VoteTabs from './components/vote/VoteTabs';
 import Timer from './components/common/Timer';
@@ -168,29 +168,3 @@ function App() {
     </UserProvider>
   );
 }
-
-function SignButton() {
-  const { signMessage, isPending, data, error } = useSignMessage();
-
-  return (
-    <>
-      <button type="button" onClick={() => signMessage({ message: "hello world" })} disabled={isPending}>
-        {isPending ? "Signing..." : "Sign message"}
-      </button>
-      {data && (
-        <>
-          <div>Signature</div>
-          <div>{data}</div>
-        </>
-      )}
-      {error && (
-        <>
-          <div>Error</div>
-          <div>{error.message}</div>
-        </>
-      )}
-    </>
-  );
-}
-
-export default App;
