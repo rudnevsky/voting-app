@@ -1,5 +1,5 @@
 import React from 'react';
-import Tag from '../common/Tag';
+// import Tag from '../common/Tag';
 
 const issuerIcons: Record<string, string> = {
   BUILD: 'https://placehold.co/40x40?text=B', // Replace with real icon URLs or use emoji

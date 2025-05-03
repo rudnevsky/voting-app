@@ -53,7 +53,7 @@ const initialDataPoints: DataPoint[] = [
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [user, setUser] = useState<User>(initialUser);
+  const [user] = useState<User>(initialUser);
   const [dataPoints, setDataPoints] = useState<DataPoint[]>(initialDataPoints);
 
   // Calculate total voting power (for now, sum)

@@ -6,7 +6,6 @@ type VoteModalProps = {
   value: number;
   max: number;
   available: number;
-  locked: number;
   onChange: (value: number) => void;
   onVote: () => void;
   onRedeem: () => void;
@@ -14,7 +13,7 @@ type VoteModalProps = {
   canRedeem?: boolean;
 };
 
-const VoteModal: React.FC<VoteModalProps> = ({ isOpen, dataPointName, value, max, available, locked, onChange, onVote, onRedeem, onClose, canRedeem }) => {
+const VoteModal: React.FC<VoteModalProps> = ({ isOpen, dataPointName, value, max, available, onChange, onVote, onRedeem, onClose, canRedeem }) => {
   if (!isOpen) return null;
   return (
     <div style={{ position: 'fixed', top: 0, left: 0, width: '100vw', height: '100vh', background: '#0008', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -54,7 +53,7 @@ const VoteModal: React.FC<VoteModalProps> = ({ isOpen, dataPointName, value, max
           <span>0</span>
           <span>100%</span>
         </div>
-        {/* Available and Locked */}
+        {/* Available */}
         <div style={{ display: 'flex', justifyContent: 'flex-start', fontSize: 15, color: '#222', marginBottom: 24 }}>
           <span><span style={{ fontSize: 18, color: '#6C38E8', marginRight: 4 }}>●</span> Available {available}</span>
         </div>

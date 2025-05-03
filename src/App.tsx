@@ -150,7 +150,6 @@ function AppContent() {
           value={modalValue}
           max={modalMax}
           available={available}
-          locked={locked}
           onChange={setModalValue}
           onVote={handleVote}
           onRedeem={handleRedeem}
@@ -167,27 +166,6 @@ function App() {
     <UserProvider>
       <AppContent />
     </UserProvider>
-  );
-}
-
-function ConnectMenu() {
-  const { isConnected, address } = useAccount();
-  const { connect, connectors } = useConnect();
-
-  if (isConnected) {
-    return (
-      <>
-        <div>Connected account:</div>
-        <div>{address}</div>
-        <SignButton />
-      </>
-    );
-  }
-
-  return (
-    <button type="button" onClick={() => connect({ connector: connectors[0] })}>
-      Connect
-    </button>
   );
 }
 
